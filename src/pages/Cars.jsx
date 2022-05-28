@@ -1,27 +1,20 @@
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
-import {
-  Button,
-  Card,
-  Col,
-  Container,
-  Form,
-  Nav,
-  Navbar,
-  Row,
-} from "react-bootstrap";
+import { Button, Card, Col, Container, Form, Nav, Row } from "react-bootstrap";
 import { BsCalendar3, BsGearFill, BsPeopleFill } from "react-icons/bs";
 import { Navigate } from "react-router-dom";
+import { addUser } from "../slices/userSlice";
+import { useDispatch } from "react-redux";
 
 export default function FilterCar() {
   const dispatch = useDispatch();
-    const [isLoggedIn, setIsLoggedIn] = useState(true);
-    const [user, setUser] = useState({});
-    const [cars, setCars] = useState([])
-    const capacityField = useRef();
-    const isWithDriverField = useRef();
-    const availableAtDateField = useRef();
-    const availableAtTimeField = useRef();
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [user, setUser] = useState({});
+  const [cars, setCars] = useState([]);
+  const capacityField = useRef();
+  const isWithDriverField = useRef();
+  const availableAtDateField = useRef();
+  const availableAtTimeField = useRef();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -43,6 +36,12 @@ export default function FilterCar() {
         const currentUserResponse = currentUserRequest.data;
 
         if (currentUserResponse.status) {
+          dispatch(
+            addUser({
+              user: currentUserResponse.data.user,
+              token: token,
+            })
+          );
           setUser(currentUserResponse.data.user);
         }
       } catch (err) {
@@ -63,16 +62,24 @@ export default function FilterCar() {
   const filtered = async (e) => {
     e.preventDefault();
     try {
-        const dateTime = new Date(`${availableAtDateField.current.value} ${availableAtTimeField.current.value}`)
+      const dateTime = new Date(
+        `${availableAtDateField.current.value} ${availableAtTimeField.current.value}`
+      );
 
-        const dataCars = await axios.get(`http://localhost:8087/cars/filtered?isWithDriver=${isWithDriverField.current.value}&capacity=${capacityField.current.value}&availableAt=${dateTime.toISOString()}`)
+      const dataCars = await axios.get(
+        `http://localhost:8087/cars/filtered?isWithDriver=${
+          isWithDriverField.current.value
+        }&capacity=${
+          capacityField.current.value
+        }&availableAt=${dateTime.toISOString()}`
+      );
 
-        const payloadData = await dataCars.data.data.filteredCars;
-        setCars(payloadData);
+      const payloadData = await dataCars.data.data.filteredCars;
+      setCars(payloadData);
     } catch (err) {
-        console.log(err);
+      console.log(err);
     }
-};
+  };
 
   return isLoggedIn ? (
     // NavBar Start
@@ -201,7 +208,7 @@ export default function FilterCar() {
                         <input
                           type="date"
                           className="form-control"
-                          ref={availableAtField}
+                          ref={availableAtDateField}
                           placeholder="pilih tanggal booking"
                         />
                       </div>
@@ -209,18 +216,34 @@ export default function FilterCar() {
                     <div className="col-md-12 col-lg-3 col-sm-12">
                       Waktu Jemput/Ambil
                       <div className="mb-3">
-                        <select id="inputTime" className="form-select">
+                        <select
+                          id="inputTime"
+                          className="form-select"
+                          ref={availableAtTimeField}
+                        >
                           <option hidden>Pilih Waktu</option>
                           <option value="08:00">08:00 WIB</option>
                           <option value="09:00">09:00 WIB</option>
                           <option value="10:00">10:00 WIB</option>
                           <option value="11:00">11:00 WIB</option>
                           <option value="12:00">12:00 WIB</option>
+                          <option value="13:00">13:00 WIB</option>
+                          <option value="14:00">14:00 WIB</option>
+                          <option value="15:00">15:00 WIB</option>
+                          <option value="16:00">16:00 WIB</option>
+                          <option value="17:00">17:00 WIB</option>
+                          <option value="18:00">18:00 WIB</option>
+                          <option value="19:00">19:00 WIB</option>
+                          <option value="20:00">20:00 WIB</option>
+                          <option value="21:00">21:00 WIB</option>
+                          <option value="22:00">22:00 WIB</option>
+                          <option value="23:00">23:00 WIB</option>
+                          <option value="24:00">24:00 WIB</option>
                         </select>
                       </div>
                     </div>
                     <div className="col-md-12 col-lg-3 col-sm-12">
-                      Jumlah Penumpang (Optional)
+                      Jumlah Penumpang
                       <div className="mb-3">
                         <select ref={capacityField} className="form-select">
                           <option hidden>Jumlah Penumpang</option>
@@ -288,20 +311,20 @@ export default function FilterCar() {
       </Container>
 
       {/* Footer Start */}
-      <div class="container" style={{ marginTop: "150px" }}>
-        <div class="row" style={{ padding: "20px 40px 0px" }}>
-          <div class="col-sm-3 fw-light fs-7">
+      <div className="container" style={{ marginTop: "150px" }}>
+        <div className="row" style={{ padding: "20px 40px 0px" }}>
+          <div className="col-sm-3 fw-light fs-7">
             <p>Jalan Suroyo No. 161 Mayangan Kota Probolonggo 672000</p>
             <p>binarcarrental@gmail.com</p>
             <p>081-233-334-808</p>
           </div>
-          <div class="col-sm-3 fw-bold fs-7">
+          <div className="col-sm-3 fw-bold fs-7">
             <p>Our services</p>
             <p>Why Us</p>
             <p>Testimonial</p>
             <p>FAQ</p>
           </div>
-          <div class="col-sm-3 fw-light fs-7">
+          <div className="col-sm-3 fw-light fs-7">
             <p>Connect With Us</p>
             <img src="/assets/icon_facebook.svg" />
             <img src="./assets/icon_instagram.svg" />
@@ -309,9 +332,9 @@ export default function FilterCar() {
             <img src="./assets/icon_mail.svg" />
             <img src="/assets/icon_twitch.svg" />
           </div>
-          <div class="col-sm-3 fw-light fs-7">
+          <div className="col-sm-3 fw-light fs-7">
             <p>Copyright Binar 2022</p>
-            <a href="" class="btn btn-info"></a>
+            <a href="" className="btn btn-info"></a>
           </div>
         </div>
       </div>

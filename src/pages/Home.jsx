@@ -230,9 +230,9 @@ export default function Home() {
       {/* Why Us End */}
 
       {/* Testimonial Start */}
-      <section class="testimonial" id="testimonial">
-        <div class="Testimonial-tittle" id="Testimonial">
-          <h2 class=" font-weight-bold">Testimonial</h2>
+      <section className="testimonial" id="testimonial">
+        <div className="Testimonial-tittle" id="Testimonial">
+          <h2 className=" font-weight-bold">Testimonial</h2>
           <p>Berbagai review positif dari para pelanggan kami</p>
         </div>
 
@@ -245,15 +245,15 @@ export default function Home() {
           nav
         >
           <div className="item">
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="card item">
-                  <div class="card-body">
-                    <div class="card-left img-card">
-                      <img src="/assets/img_photo.svg" class="rounded-circle" />
+            <div className="row">
+              <div className="col-lg-12">
+                <div className="card item">
+                  <div className="card-body">
+                    <div className="card-left img-card">
+                      <img src="/assets/img_photo.svg" className="rounded-circle" />
                     </div>
-                    <div class="card-right">
-                      <div class="faq-icon">
+                    <div className="card-right">
+                      <div className="faq-icon">
                         <BsFillStarFill />
                         <BsFillStarFill />
                         <BsFillStarFill />
@@ -266,7 +266,7 @@ export default function Home() {
                         adipiscing elit, sed do eiusmod lorem ipsum dolor sit
                         amet, consectetur adipiscing elit, sed do eiusmod”
                       </p>
-                      <p class="fw-bold">John Dee 32, Bromo</p>
+                      <p className="fw-bold">John Dee 32, Bromo</p>
                     </div>
                   </div>
                 </div>
@@ -274,20 +274,20 @@ export default function Home() {
             </div>
           </div>
           <div className="item">
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="card item">
-                  <div class="card-body">
-                    <div class="card-left img-card">
+            <div className="row">
+              <div className="col-lg-12">
+                <div className="card item">
+                  <div className="card-body">
+                    <div className="card-left img-card">
                       <img src="/assets/img_photo (1).svg" />
                     </div>
-                    <div class="card-right">
-                      <div class="faq-icon">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
+                    <div className="card-right">
+                      <div className="faq-icon">
+                        <i className="bi bi-star-fill"></i>
+                        <i className="bi bi-star-fill"></i>
+                        <i className="bi bi-star-fill"></i>
+                        <i className="bi bi-star-fill"></i>
+                        <i className="bi bi-star-fill"></i>
                       </div>
                       <p>
                         “Lorem ipsum dolor sit amet, consectetur furete elit,
@@ -295,7 +295,7 @@ export default function Home() {
                         adipiscing elit, sed do eiusmod lorem ipsum dolor sit
                         amet, consectetur adipiscing elit, sed do eiusmod”
                       </p>
-                      <p class="fw-bold">John Dee 32, Bromo</p>
+                      <p className="fw-bold">John Dee 32, Bromo</p>
                     </div>
                   </div>
                 </div>
@@ -303,20 +303,20 @@ export default function Home() {
             </div>
           </div>
           <div className="item">
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="card item">
-                  <div class="card-body">
-                    <div class="card-left img-card">
+            <div className="row">
+              <div className="col-lg-12">
+                <div className="card item">
+                  <div className="card-body">
+                    <div className="card-left img-card">
                       <img src="/assets/img_photo.svg" />
                     </div>
-                    <div class="card-right">
-                      <div class="faq-icon">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
+                    <div className="card-right">
+                      <div className="faq-icon">
+                        <i className="bi bi-star-fill"></i>
+                        <i className="bi bi-star-fill"></i>
+                        <i className="bi bi-star-fill"></i>
+                        <i className="bi bi-star-fill"></i>
+                        <i className="bi bi-star-fill"></i>
                       </div>
                       <p>
                         “Lorem ipsum dolor sit amet, consectetur furete elit,
@@ -324,7 +324,7 @@ export default function Home() {
                         adipiscing elit, sed do eiusmod lorem ipsum dolor sit
                         amet, consectetur adipiscing elit, sed do eiusmod”
                       </p>
-                      <p class="fw-bold">John Dee 32, Bromo</p>
+                      <p className="fw-bold">John Dee 32, Bromo</p>
                     </div>
                   </div>
                 </div>
@@ -336,15 +336,15 @@ export default function Home() {
       {/* Testimonial End */}
 
       {/* Banner Start */}
-      <section class="banner">
-        <div class="container">
-          <div class="banner-content text-center text-white">
-            <h3 class=" font-weight-bold">Sewa Mobil di (Lokasimu) Sekarang</h3>
+      <section className="banner">
+        <div className="container">
+          <div className="banner-content text-center text-white">
+            <h3 className=" font-weight-bold">Sewa Mobil di (Lokasimu) Sekarang</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
             </p>
-            <a class="btn btn-success">Mulai Sewa Mobil</a>
+            <a className="btn btn-success">Mulai Sewa Mobil</a>
           </div>
         </div>
       </section>
@@ -353,18 +353,18 @@ export default function Home() {
       {/* FAQ Start */}
       <section id="faq">
         <div
-          class="container"
+          className="container"
           style={{ marginTop: "100px", padding: "20px 40px 0px" }}
           id="faq"
         >
-          <div class="row">
-            <div class="col-sm-6">
-              <h1 class="fw-bold fs-4">Frequently Asked Question</h1>
-              <p class="fw-light fs-6">
+          <div className="row">
+            <div className="col-sm-6">
+              <h1 className="fw-bold fs-4">Frequently Asked Question</h1>
+              <p className="fw-light fs-6">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
               </p>
             </div>
-            <div class="col-sm-6">
+            <div className="col-sm-6">
               <Accordion>
                 <Accordion.Item eventKey="0">
                   <Accordion.Header>
@@ -464,20 +464,20 @@ export default function Home() {
       {/* FAQ End */}
 
       {/* Footer Start */}
-      <div class="container" style={{ marginTop: "150px" }}>
-        <div class="row" style={{ padding: "20px 40px 0px" }}>
-          <div class="col-sm-3 fw-light fs-7">
+      <div className="container" style={{ marginTop: "150px" }}>
+        <div className="row" style={{ padding: "20px 40px 0px" }}>
+          <div className="col-sm-3 fw-light fs-7">
             <p>Jalan Suroyo No. 161 Mayangan Kota Probolonggo 672000</p>
             <p>binarcarrental@gmail.com</p>
             <p>081-233-334-808</p>
           </div>
-          <div class="col-sm-3 fw-bold fs-7">
+          <div className="col-sm-3 fw-bold fs-7">
             <p>Our services</p>
             <p>Why Us</p>
             <p>Testimonial</p>
             <p>FAQ</p>
           </div>
-          <div class="col-sm-3 fw-light fs-7">
+          <div className="col-sm-3 fw-light fs-7">
             <p>Connect With Us</p>
             <img src="/assets/icon_facebook.svg" />
             <img src="./assets/icon_instagram.svg" />
@@ -485,9 +485,9 @@ export default function Home() {
             <img src="./assets/icon_mail.svg" />
             <img src="/assets/icon_twitch.svg" />
           </div>
-          <div class="col-sm-3 fw-light fs-7">
+          <div className="col-sm-3 fw-light fs-7">
             <p>Copyright Binar 2022</p>
-            <a href="" class="btn btn-info"></a>
+            <a href="" className="btn btn-info"></a>
           </div>
         </div>
       </div>
